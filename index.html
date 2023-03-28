@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -10,7 +10,36 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:ital,wght@0,400;0,700;1,400&display=swap"
       rel="stylesheet"
     />
+    <!-- IMPORTANT: load styles before initial dark/light toggle javascript logic -->
+    <!-- to avoid FOUC (flash of unstyled content) -->
     <link rel="stylesheet" href="css/style.css" />
+    <!-- Initial script that sets color theme on website and local storage (if needed) -->
+    <!-- NOTE: recommended to inline this on <head> to avoid FOUC -->
+    <script>
+      // query <html> element
+      const htmlElement = document.documentElement;
+
+      // get color theme from local storage and user system
+      const colorThemeKey = 'color-theme';
+      let localStorageColorTheme = localStorage.getItem(colorThemeKey);
+      const systemColorTheme = window.matchMedia('(prefers-color-scheme: dark)')
+        .matches
+        ? 'dark'
+        : 'light';
+
+      // color theme defaults to user system's theme
+      let colorTheme = systemColorTheme;
+
+      // if theme exists on local storage, set color theme to its value
+      if (localStorageColorTheme) colorTheme = localStorageColorTheme;
+      // if theme does not exist on local storage, set user system's theme on it
+      else localStorage.setItem(colorThemeKey, colorTheme);
+
+      // add/remove .dark class depending on final color theme
+      if (colorTheme === 'dark') htmlElement.classList.add('dark');
+      else htmlElement.classList.remove('dark');
+    </script>
+    <script src="js/script.js" defer></script>
     <title>Fylo Website</title>
   </head>
   <body class="font-open-sans dark:bg-dark-blue dark:text-white">
@@ -46,7 +75,7 @@
           <!-- 1. initially hidden -->
           <svg
             id="theme-toggle-dark-icon"
-            class="w-5 h-5 hidden"
+            class="hidden h-5 w-5"
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +88,7 @@
           <!-- 1. initially hidden -->
           <svg
             id="theme-toggle-light-icon"
-            class="w-5 h-5 hidden"
+            class="hidden h-5 w-5"
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +99,7 @@
               clip-rule="evenodd"
             ></path>
           </svg>
-        </button> 
+        </button>
       </div>
     </header>
   </body>
