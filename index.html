@@ -132,5 +132,126 @@
         </button>
       </div>
     </section>
+    <!-- Features Section -->
+    <section id="features" class="bg-gray-50 pt-12 dark:bg-dark-blue-1">
+      <!-- Main Features Container -->
+      <div class="container mx-auto px-6 pb-32">
+        <!-- First Row Container -->
+        <!-- 1. each row will host two features, either in column direction (mobile) -->
+        <!-- or row direction (medium and larger screens) -->
+        <div
+          class="flex flex-col space-y-24 text-center md:flex-row md:space-y-0"
+        >
+          <!-- Feature 1 Container -->
+          <!-- 1. content will always stack vertically -->
+          <!-- 2. md:w-1/2 so we can have two features side-by-side on medium and larger screens -->
+          <!-- 3. three items: a centered image, header text, and description text -->
+          <div class="flex flex-col items-center space-y-2 md:w-1/2">
+            <!-- Centered Image -->
+            <div class="mb-6 flex h-24 items-center justify-center">
+              <img src="images/icon-access-anywhere.svg" alt="" />
+            </div>
+            <!-- Header Text -->
+            <h3 class="text-xl font-bold">Access your file from anywhere</h3>
+            <!-- Description Text -->
+            <p class="max-w-md">
+              The ability to use a smartphone, tablet, or computer to access
+              your account means your files follow you everywhere.
+            </p>
+          </div>
+          <!-- Feature 2 Container -->
+          <div class="flex flex-col items-center space-y-2 md:w-1/2">
+            <div class="mb-6 flex h-24 items-center justify-center">
+              <img src="images/icon-security.svg" alt="" />
+            </div>
+            <h3 class="text-xl font-bold">Security you can trust</h3>
+            <p class="max-w-md">
+              2-factor authentication and user-controlled encryption are just a
+              couple of the security features we allow to help secure your
+              files.
+            </p>
+          </div>
+        </div>
+        <!-- Second Row Container -->
+        <div
+          class="mt-28 flex flex-col space-y-24 text-center md:flex-row md:space-y-0"
+        >
+          <!-- Feature 3 Container -->
+          <div class="flex flex-col items-center space-y-2 md:w-1/2">
+            <div class="mb-6 flex h-24 items-center justify-center">
+              <img src="images/icon-collaboration.svg" alt="" />
+            </div>
+            <h3 class="text-xl font-bold">Access your file from anywhere</h3>
+            <p class="max-w-md">
+              The ability to use a smartphone, tablet, or computer to access
+              your account means your files follow you everywhere.
+            </p>
+          </div>
+          <!-- Feature 4 Container -->
+          <div class="flex flex-col items-center space-y-2 md:w-1/2">
+            <div class="mb-6 flex h-24 items-center justify-center">
+              <img src="images/icon-any-file.svg" alt="" />
+            </div>
+            <h3 class="text-xl font-bold">Security you can trust</h3>
+            <p class="max-w-md">
+              2-factor authentication and user-controlled encryption are just a
+              couple of the security features we allow to help secure your
+              files.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Productive Section -->
+    <section id="productive" class="bg-white dark:bg-dark-blue">
+      <!-- Main Productive Container -->
+      <!-- 1. two flex items: image container and text/link container -->
+      <div
+        class="container mx-auto flex flex-col items-center px-6 pt-24 pb-32 md:flex-row md:space-x-16"
+      >
+        <!-- Image Container -->
+        <!-- 1. md:w-1/2 so it takes up half of available width -->
+        <div class="md:w-1/2">
+          <img
+            src="images/illustration-stay-productive.png"
+            alt=""
+            class="mb-10"
+          />
+        </div>
+        <!-- Text/Link Container -->
+        <!-- 1. two flex items: text container and a link container -->
+        <div class="flex flex-col items-start md:w-1/2">
+          <!-- Text Container -->
+          <!-- 1. three flex items: a header and two paragraphs -->
+          <div class="flex flex-col space-y-5">
+            <!-- Header Text -->
+            <h4 class="max-w-md text-xl font-bold md:text-4xl">
+              Stay productive wherever you are
+            </h4>
+            <!-- Paragraph 1 Text -->
+            <p class="text-md md:text-lg">
+              Never let location be an issue when accessing your files. Fylo has
+              you covered for all of your file storage needs.
+            </p>
+            <!-- Paragraph 2 Text -->
+            <p class="text-md md:text-lg">
+              Securely share files and folders with friends, family and
+              colleagues for live collaboration. No email attachments required.
+            </p>
+          </div>
+          <!-- Link Container -->
+          <!-- 1. the actual link will reside inside a div block -->
+          <!-- (for no apparent reason since I putting the top margin directly -->
+          <!-- on the link yields the same result) -->
+          <div class="mt-4 block">
+            <!-- Link -->
+            <a href="#" class="border-b border-accent-cyan text-accent-cyan"
+              >See how Flyo works
+              <img src="images/icon-arrow.svg" alt="" class="inline pb-2"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
